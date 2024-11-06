@@ -2,19 +2,26 @@
 #define ARRAY_HPP
 
 #include <iostream>
+#include <exception>
 
-typedef std::string str;
-
-class Array
+template <typename T> class Array
 {
 	private:
+		T			   *_array;
+		unsigned int	_size;
 
 	public:
 		Array();
+		Array(unsigned int n);
 		Array(const Array &copy);
 		~Array();
 
-		Array &operator =(const Array &copy);
+		unsigned int	size() const;
+
+		T			&operator [](unsigned int i) const;
+		Array<T>	&operator  =(const Array &copy);
 };
+
+#include "Array.tpp"
 
 #endif

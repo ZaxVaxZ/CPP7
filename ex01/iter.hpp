@@ -1,20 +1,10 @@
 #ifndef ITER_HPP
 #define ITER_HPP
 
-#include <iostream>
-
-typedef std::string str;
-
-class iter
+template <typename dataType> void iter(dataType *array, size_t size, void (*func)(dataType &))
 {
-	private:
-
-	public:
-		iter();
-		iter(const iter &copy);
-		~iter();
-
-		iter &operator =(const iter &copy);
-};
+	for (size_t i = 0; i < size; i++)
+		func(array[i]);
+}
 
 #endif

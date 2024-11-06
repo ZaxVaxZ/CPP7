@@ -1,20 +1,23 @@
 #ifndef WHATEVER_HPP
 #define WHATEVER_HPP
 
-#include <iostream>
-
-typedef std::string str;
-
-class whatever
+template <typename dataType> dataType min(dataType a, dataType b)
 {
-	private:
+	return (a < b ? a : b);
+}
 
-	public:
-		whatever();
-		whatever(const whatever &copy);
-		~whatever();
+template <typename dataType> dataType max(dataType a, dataType b)
+{
+	return (a > b ? a : b);
+}
 
-		whatever &operator =(const whatever &copy);
-};
+template <typename dataType> void swap(dataType &a, dataType &b)
+{
+	dataType	c;
+
+	c = a;
+	a = b;
+	b = c;
+}
 
 #endif
